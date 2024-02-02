@@ -93,6 +93,8 @@ To enhance security, generate a secret key for your Flask application:
 Here are some suggestions for future improvements:
 
 - Implement user authentication with more secure methods (e.g., user database).
+- better authentication that doesn't require a script to be ran everytime 
+
 - Enhance the UI/UX of the portal for a more polished appearance.
 - Implement error handling and feedback messages for a better user experience.
 - Add logging to keep track of user actions and application events.
