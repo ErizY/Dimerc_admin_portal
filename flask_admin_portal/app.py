@@ -72,6 +72,10 @@ def create_user():
     except requests.exceptions.RequestException as e:
         return jsonify({'error': str(e)})
 
+
+# Number of photos to display per page
+PHOTOS_PER_PAGE = 9
+
 @app.route('/photos')
 def list_photos():
     if not is_logged_in():
@@ -82,9 +86,20 @@ def list_photos():
         response = requests.get('https://jsonplaceholder.typicode.com/photos')
         response.raise_for_status()  # Raise an HTTPError for bad responses
         photos = response.json()
-        return render_template('photos.html', photos=photos, username=session['username'])
+
+        # Pagination logic
+        page = request.args.get('page', 1, type=int)
+        start_index = (page - 1) * PHOTOS_PER_PAGE
+        end_index = start_index + PHOTOS_PER_PAGE
+        paginated_photos = photos[start_index:end_index]
+
+        # Calculate total pages
+        total_pages = (len(photos) + PHOTOS_PER_PAGE - 1) // PHOTOS_PER_PAGE
+
+        return render_template('photos.html', photos=paginated_photos, page=page, total_pages=total_pages, username=session['username'])
     except requests.exceptions.RequestException as e:
         return render_template('error.html', error=str(e), username=session['username'])
+
 
 if __name__ == '__main__':
     app.run(debug=True)
