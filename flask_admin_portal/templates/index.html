@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Admin Portal</h1>
+            <p class="lead">Explore the portal to manage users and photos.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Users</h5>
+                        <p class="card-text">View and create new users in the portal.</p>
+                        <a href="{{ url_for('list_users') }}" class="btn btn-primary">Go to Users</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Explore Photos</h5>
+                        <p class="card-text">Browse through the directory of photos.</p>
+                        <a href="{{ url_for('list_photos') }}" class="btn btn-primary">Go to Photos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if username %}
+            <p>Welcome, {{ username }}! (<a href="{{ url_for('logout') }}">Logout</a>)</p>
+        {% else %}
+            <p><a href="{{ url_for('login') }}">Login</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
