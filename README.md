@@ -97,8 +97,3 @@ Here are some suggestions for future improvements:
 - Implement error handling and feedback messages for a better user experience.
 - Add logging to keep track of user actions and application events.
 
-Feel free to contribute and make this portal even better!
-
----
-
-Feel free to modify the content according to your specific requirements.
