@@ -21,7 +21,7 @@ Welcome to the Dimerc Admin Portal! This portal is designed to manage users and 
 2. Navigate to the project directory:
 
     ```bash
-    cd Dimerc_admin_portal/flaskadmin/portal
+    cd Dimerc_admin_portal/flaskadmin/
     ```
 
 3. Set up a virtual environment (recommended):
