@@ -21,7 +21,7 @@ Welcome to the Dimerc Admin Portal! This portal is designed to manage users and 
 2. Navigate to the project directory:
 
     ```bash
-    cd Dimerc_admin_portal
+    cd Dimerc_admin_portal/flaskadmin/portal
     ```
 
 3. Set up a virtual environment (recommended):
@@ -62,7 +62,7 @@ To enhance security, generate a secret key for your Flask application:
 
 2. Copy the generated key.
 
-3. Open `app.py` and replace the existing `app.secret_key` with the new key.
+3. Open `app.py` using your prefered editor and replace the existing `app.secret_key` with the new key.
 
 ## Usage
 
