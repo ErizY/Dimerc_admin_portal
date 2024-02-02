@@ -6,7 +6,7 @@ Welcome to the Dimerc Admin Portal! This portal is designed to manage users and 
 
 ### Prerequisites
 
-- Python 3.10.2 installed
+- Python 3.10.2+ installed
 - Git installed
 - Code editor (e.g., Visual Studio Code)
 
